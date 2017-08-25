@@ -46,6 +46,15 @@ class IndexController extends Controller
 
         //передаем в макет переменные
 
-        return view('site.index');
+        return view('site.index',array(
+                                     'menu'=> $menu,
+                                      'pages'=>$pages,
+                                       'services'=>$services,
+                                        'portfolios'=>$portfolios,
+                                         'peoples'=>$peoples 
+             
+                                          ));
+        
+        
     }
 }
