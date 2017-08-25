@@ -20,6 +20,31 @@ class IndexController extends Controller
 
        // dd($pages);//колекция моделей Page
 
+        $menu = array();
+
+        foreach ($pages as $page) {
+            //item -отдельный пункт меню
+            $item = array('title' => $page->name, 'alias'=>$page->alias);
+            //$menu - массив в который будут добавлены доп. ячейки
+            array_push($menu, $item );
+
+        }
+       // dd($menu);
+        //данные не из базы а из html шаблона
+        //alias - id section
+        $item = array('title'=>'Services', 'alias'=>'services');
+        array_push($menu, $item );
+
+        $item = array('title'=>'Portfolio', 'alias'=>'Portfolio');
+        array_push($menu, $item );
+
+        $item = array('title'=>'Team', 'alias'=>'team');
+        array_push($menu, $item );
+
+        $item = array('title'=>'Contact', 'alias'=>'contact');
+        array_push($menu, $item );
+
+        //передаем в макет переменные
 
         return view('site.index');
     }
