@@ -10,13 +10,14 @@
                     </div>
                     <div id="main-nav" class="collapse navbar-collapse navStyle">
                         <ul class="nav navbar-nav" id="mainNav">
-                            <li class="active"><a href="#hero_section" class="scroll-link">Home</a></li>
-                            <li><a href="#aboutUs" class="scroll-link">About Us</a></li>
-                            <li><a href="#service" class="scroll-link">Services</a></li>
-                            <li><a href="#Portfolio" class="scroll-link">Portfolio</a></li>
-                            <li><a href="#clients" class="scroll-link">Clients</a></li>
-                            <li><a href="#team" class="scroll-link">Team</a></li>
-                            <li><a href="#contact" class="scroll-link">Contact</a></li>
+
+
+          @foreach($menu as $item)
+                                <li><a href="#{{ $item['alias'] }}" class="scroll-link">{{ $item['title'] }}</a></li>
+              @endforeach
+
+
+
                         </ul>
                     </div>
                 </nav>
