@@ -63,14 +63,21 @@
         <div class="container">
             <h2>Services</h2>
             <div class="service_wrapper">
-                <div class="row">
-                    <div class="col-lg-4">
+
+                @foreach($sevices as $k => $service)
+                        @if($k == 0 || $k%3 == 0)
+                              <div class="row {{ ($k != 0) ? 'borderTop' : '' }}">
+                        @endif
+
+                    <div class="col-lg-4 {{ ($k%3 > 0) ? 'borderLeft' : '' }}">
                         <div class="service_block">
                             <div class="service_icon delay-03s animated wow  zoomIn"> <span><i class="fa fa-android"></i></span> </div>
                             <h3 class="animated fadeInUp wow">Android</h3>
                             <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
                         </div>
                     </div>
+                            @endforeach
+
                     <div class="col-lg-4 borderLeft">
                         <div class="service_block">
                             <div class="service_icon icon2  delay-03s animated wow zoomIn"> <span><i class="fa fa-apple"></i></span> </div>
